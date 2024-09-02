@@ -1,0 +1,131 @@
+.avatar-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .avatar {
+    width: 80px; /* Adjust size as needed */
+    /* height: 100px;  */
+    border-radius: 50%; /* Makes the avatar circular */
+    object-fit: contain;
+
+  }
+  
+  .medal {
+    position: absolute;
+    bottom: -6px; /* Pushes the medal partially outside the avatar */
+    right: -5px; /* Pushes the medal partially outside the avatar */
+    object-fit: contain;
+    /* width: 40px;  */
+    height: 40px; /* Adjust size as needed */
+    /* Optionally add a border or other styles */
+  }
+  .LeaderBoard{
+    /* height: 90vh; */
+    width: 100vw;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+  }
+  .Lbody{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: aqua; */
+width: 45vw;
+gap: 1rem;
+  }
+  .top3{
+background-color: #222222a4;
+border-radius: 8px;
+border: 2px solid rgba(41, 41, 41, 0.426);
+width: 38vw;
+height: 28vh;
+display: flex ;
+gap: 1.9rem;
+justify-content: center;
+align-items: center;
+  }
+.userSearch{
+    width: 38vw;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+}
+.userlist{
+    width: 38vw;
+    height: 45vh;
+   /* background-color: aliceblue; */
+   overflow-y: scroll;
+   scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+  padding-bottom: 0.5rem;
+}
+.userlist-div::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  
+.pos1{
+    background-color: #0f0f0fb6;
+    /* background-color: wheat; */
+width:10vw ;
+flex-direction: column;
+gap: 0.5rem;
+height: 23vh;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+.userBadge{
+  color: white;
+  font-size: small;
+}
+.rankTittle{
+    min-width: 6vw;
+    padding: 0.5rem;
+    height: 4vh;
+    border-radius: 8px;
+    color: black;
+    background-color: #ffffff10;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    /* overflow:hidden; */
+}
+.name{
+    font-size: 0.8rem;
+    overflow: hidden;
+}
+.UserList{
+    width: 38vw;
+    /* background-color: #fff; */
+    height: 8vh;
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.396);
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+.active-class{
+ 
+  border-bottom: 2px solid rgba(31, 112, 39, 0.396);
+
+}
+.userListleft{
+    width: 20vw;
+    height: 8vh;
+display: flex;
+gap: 1rem;
+align-items: center;
+
+
+
+}

@@ -1,0 +1,47 @@
+.popover{
+    width: 30vw;
+    height: 40vh;
+    z-index: 999;
+    position: absolute;
+    color: #fff;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.8px);
+-webkit-backdrop-filter: blur(1.8px);
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 1rem;
+}
+.popBtns{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}   
+
+
+.PopOver{
+    position: relative;
+    transition: position 0.5s ease-in-out;
+
+
+}
+.addQstnBtn,.prvQstnBtn{
+    /* height: 1rem; */
+    padding-inline:1rem ;
+    padding-block:0.5rem ;
+    border-radius: 5px;
+    background-color:#256341;
+    color: #fff;
+}
+.addQstnBtn:hover,.prvQstnBtn:hover{
+    background-color:#398b5e;
+
+}
+.addQstnBtn:active,.prvQstnBtn:active{
+    background-color:#1c3f2c;
+
+}

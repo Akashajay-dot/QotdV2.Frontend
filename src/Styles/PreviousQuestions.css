@@ -1,0 +1,61 @@
+.PreviousQuestion{
+    color: white;
+    width: 100vw;
+    height: 87vh;
+    /* background-color: #fff;   */
+    display: flex;
+    justify-content: center;
+    
+}   
+.mainP{
+    width: 90vw;
+    height: 80vh;
+    /* background-color: antiquewhite; */
+    border-radius: 10px;
+    border: 2px solid #282D32;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainPleft{
+    border: 2px solid #282D32;
+    width: 30vw;
+    height: 70vh;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 1rem;
+    
+   
+}
+.mainPright{
+    border: 2px solid #282D32;
+    width: 55vw;
+    height: 70vh;
+    border-radius: 10px;
+}
+.mainPleft::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+
+  /*QSnippeet*/
+  .Qsnippet{
+    border: 2px solid #282D32;
+    width: 27.5vw;
+    height: 15vh;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #282d3256;
+
+  }
+  .Qsnippet:hover{
+    background-color: #282d328b;
+
+  }
+  .QsnippetBtn{
+    display: none;
+
+  }

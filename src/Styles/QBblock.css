@@ -1,0 +1,91 @@
+.QBblock{
+    width: 85vw;
+    height: 8vh;
+    background-color: #0F0F0F;
+
+    border-radius: 5px;
+    border: 2px solid hsla(0, 0%, 24%, 0.618);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    gap: 1rem;
+}.QBblock1{
+    width: 65vw;
+    height: 8vh;
+    background-color: transparent;
+
+    border-radius: 5px;
+    /* border: 2px solid hsla(0, 0%, 24%, 0.618); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    gap: 1rem;
+}
+.QBleft{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.QBright{
+    display: flex;
+    align-items:center;
+    gap: 1rem;
+    justify-content: flex-end;
+
+}
+.approveIndicator{
+    object-fit: contain;
+    height: 1.2rem;
+}
+.QuestionQB{
+    color: white;
+}
+.QBdate{
+    color: white;
+}
+.QbQuestion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+.edit{
+    object-fit: contain;
+    height: 1rem;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+    color: white !important ;
+}
+.css-i4bv87-MuiSvgIcon-root{
+fill: rgb(107, 107, 107) !important;
+}
+.css-10o2lyd-MuiStack-root{
+    padding-top: 0 !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+width: 51% !important;
+}
+.cancelBtn{
+    background-color: transparent;
+}
+.cancelicon{
+    fill: white !important;
+}
+.cancelicon:hover{
+    fill: rgb(112, 4, 4) !important;
+}
+.cancelicon:active{
+    fill: white !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+    padding-right: 0 !important ;
+}
+.dateInactive{
+    color: white;
+}
+.approveIndicator1{
+    color: red;
+}
