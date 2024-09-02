@@ -216,22 +216,38 @@ return (
 {/* {  isActive &&( */}
  <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker']}>
-      <DatePicker  value={(QuestionDate != null) ? dayjs(QuestionDate) :value } onChange={(newValue) =>dateChange(newValue)} minDate={minDate} readOnly={isToday}  sx={{
-            '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-                borderColor: 'transparent', // Disable the border color
-              },
-              '&:hover fieldset': {
-                borderColor: 'transparent', // Disable border color on hover
-              },
-              '&.Mui-focused fieldset': {
-                borderColor: 'transparent', // Disable border color when focused
-              },
-              '&.Mui-error fieldset': {
-                borderColor: 'transparent', // Remove the red border on error
-              },
-            },
-          }}
+      <DatePicker  value={(QuestionDate != null) ? dayjs(QuestionDate) :value } onChange={(newValue) =>dateChange(newValue)} minDate={minDate} readOnly={isToday}   sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'transparent', // Disable the border color
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'transparent', // Disable border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'transparent', // Disable border color when focused
+                    },
+                    '&.Mui-error fieldset': {
+                      borderColor: 'transparent', // Remove the red border on error
+                    },
+                  },
+                  '& .MuiInputBase-input': {
+                    color: 'white', // Change text color to white
+                   // Adjust right padding
+                  },
+                  '& .MuiIconButton-root': {
+        marginRight: '0', // Remove margin around the icon button
+      },
+                  '& .MuiInputAdornment-root .MuiSvgIcon-root': {
+                    color: 'white', // Change the calendar icon color
+                  },
+                  '& .MuiPickersDay-day': {
+                    color: 'white', // Change color of the days
+                  },
+                  '& .MuiInputBase-root': {
+                    backgroundColor: 'transparent', // Ensure background is transparent if needed
+                  },
+                }}
           shouldDisableDate={(date) => state.dates.includes(dayjs(date).format('YYYY-MM-DD'))}/>
       {/* defaultValue={dayjs(QuestionDate)} */}
       {/* (newValue) => setValue(newValue) */}
