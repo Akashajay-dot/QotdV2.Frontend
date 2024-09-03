@@ -1,65 +1,61 @@
-.LoginPage{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    font-family: 'Inter';
-   /* background-image: url("../Assets/new1.jpg"); */
-   background-size: cover ;
-   background-position: center center;
-   /* background-repeat: no-repeat; */
-   /* overflow: hidden; */
-   /* background-size: contain; */
- 
-
+.LoginPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  font-family: "Inter";
+  /* background-image: url("../Assets/new1.jpg"); */
+  background-size: cover;
+  background-position: center center;
+  /* background-repeat: no-repeat; */
+  /* overflow: hidden; */
+  /* background-size: contain; */
 }
-.login{
-    height: inherit;
-    width: 55vw;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10rem;
-    a{
-        color: #fff;
-        margin-top: 2rem;
-        font-family: 'Inter';
-
-    }
-
-}
-.hero{
-    height: inherit;
-    width: 45vw;
-}
-.logininner{
+.login {
+  height: inherit;
+  width: 55vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10rem;
+  a {
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top:9rem;
-
+    margin-top: 2rem;
+    font-family: "Inter";
+  }
 }
-.loginDisc{
-    margin-bottom: 1.5rem;
-    color: #888E94;
-    font-size: 1rem;
-    line-height: 1.5rem;}
-.loginbutm{
-    font-weight: lighter;
-    font-size: 0.8rem;
-    margin-top: 13rem;
-    color: #606871;
+.hero {
+  height: inherit;
+  width: 45vw;
 }
-.loginHead{
-    font-size: 2rem;
-    font-family: "Manrope", sans-serif;
+.logininner {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 9rem;
 }
-.hero{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img{
+.loginDisc {
+  margin-bottom: 1.5rem;
+  color: #888e94;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.loginbutm {
+  font-weight: lighter;
+  font-size: 0.8rem;
+  margin-top: 13rem;
+  color: #606871;
+}
+.loginHead {
+  font-size: 2rem;
+  font-family: "Manrope", sans-serif;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
     object-fit: contain;
     height: 20rem;
-    }
+  }
 }

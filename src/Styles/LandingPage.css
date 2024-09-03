@@ -1,46 +1,44 @@
-.landingPage{
-    width: 100vw;
-    height: 87vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: aliceblue;
+.landingPage {
+  width: 100vw;
+  height: 87vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
 }
-.questionsct{
-    
-    width: 40vw;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-    justify-content: center;
-
+.questionsct {
+  width: 40vw;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
 }
-.question{
-    padding-bottom: 2rem;
+.question {
+  padding-bottom: 2rem;
 }
 
-.option{
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 1rem;
-    padding-block: 1rem;
-    border: 1px solid #282D32;
-    background-color: #0f0f0fdd;
-    border-radius: 5px;
-    font-weight: 100;
+.option {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border: 1px solid #282d32;
+  background-color: #0f0f0fdd;
+  border-radius: 5px;
+  font-weight: 100;
 }
-.optionInner{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    /* justify-content: space-between; */
-    /* padding-inline: 2rem; */
-    /* padding-block: 1rem; */
-    /* border: 1px solid #282D32; */
-    /* background-color: #0f0f0fdd; */
-    /* border-radius: 5px; */
-    /* font-weight: 100; */
+.optionInner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* justify-content: space-between; */
+  /* padding-inline: 2rem; */
+  /* padding-block: 1rem; */
+  /* border: 1px solid #282D32; */
+  /* background-color: #0f0f0fdd; */
+  /* border-radius: 5px; */
+  /* font-weight: 100; */
 }
 /* input[type="radio"]{
     transform: scale(1.5);
@@ -48,10 +46,10 @@
 } */
 /*  */
 
-.footer{
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 /* .editbtn{
     padding-inline: 1rem;
@@ -64,88 +62,86 @@
 .editbtn:hover{
     background-color: hsl(214, 15%, 18%);
 } */
-.editbtn:active{
-    background-color: #2D353E;
+.editbtn:active {
+  background-color: #2d353e;
 }
-.submitbtn{
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
-    background-color: #287048;
-    border: 0;
-    border-radius: 5px;
-    color: white;
+.submitbtn {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  background-color: #287048;
+  border: 0;
+  border-radius: 5px;
+  color: white;
 }
-.submitbtn:hover{
-    background-color: #256341;
+.submitbtn:hover {
+  background-color: #256341;
 }
-.submitbtn:active{
-    background-color: #287048;
+.submitbtn:active {
+  background-color: #287048;
 }
-.questioninner{
-    display: flex;
-    flex-wrap: wrap;
+.questioninner {
+  display: flex;
+  flex-wrap: wrap;
 }
-
-
 
 .custom-checkbox {
-    display: none;
+  display: none;
 }
 
 /* Custom checkbox styling */
 .custom-checkbox-label {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 20px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 20px;
 }
 
 .custom-checkbox-label input:checked + .custom-checkbox-custom {
-    background-color: #287048; /* Change to desired checked color */
-    border-color: #282D32; /* Match the border to the background */
+  background-color: #287048; /* Change to desired checked color */
+  border-color: #282d32; /* Match the border to the background */
 }
 
 .custom-checkbox-custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: #fff; /* Background color for unchecked state */
-    border: 2px solid #2D353E; /* Border color */
-    /* transition: background-color 0.3s, border-color 0.3s; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #fff; /* Background color for unchecked state */
+  border: 2px solid #2d353e; /* Border color */
+  /* transition: background-color 0.3s, border-color 0.3s; */
 }
-.sucess{
-transition: background-color 5s;
+.sucess {
+  transition: background-color 5s;
 
-background-color: #256341  ;
+  background-color: #256341;
 }
-.wrong{
-border-color: rgb(115, 42, 42);
+.wrong {
+  border-color: rgb(115, 42, 42);
 }
-.submitbtn:disabled{
-    background-color: #2D353E   ;
+.submitbtn:disabled {
+  background-color: #2d353e;
 }
-.round{
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
-    border-radius: 50%;
+.round {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
 }
-.noQuestion{
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
+.noQuestion {
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
 }
-.Lmain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+.Lmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }

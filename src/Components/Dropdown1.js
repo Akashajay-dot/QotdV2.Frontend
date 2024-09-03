@@ -1,26 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import "../Styles/DropDown.css";
-import { GlobalStateContext } from '../Context/GlobalStateContext';
+import { GlobalStateContext } from "../Context/GlobalStateContext";
 
 function DropDown1({ heading, onChange }) {
-//   const [isOpen, setIsOpen] = useState(false);
-  const { state} = useContext(GlobalStateContext);
 
 
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//   };
+  const { state } = useContext(GlobalStateContext);
+
 
   const handleOptionClick = (category) => {
     onChange(category);
-    // setIsOpen(false);
   };
+ 
 
   return (
+    
     <div className="menu">
       <div className="item">
         <div className="drop">
-          <a href="#" className="link" >
+          <a href="#" className="link">
             <span>{heading}</span>
             <svg viewBox="0 0 360 360" preserveAspectRatio="xMidYMid meet">
               <g id="SVGRepo_iconCarrier">
@@ -34,17 +32,19 @@ function DropDown1({ heading, onChange }) {
             </svg>
           </a>
         </div>
-        
-          <div className="submenu">
-            {(state.categories).map((category) => (
-              <div key={category.categoryId} className="submenu-item">
-                <div className="submenu-link" onClick={() => handleOptionClick(category)}>
-                  {category.name}
-                </div>
+
+        <div className="submenu">
+          {state.categories.map((category) => (
+            <div key={category.categoryId} className="submenu-item">
+              <div
+                className="submenu-link"
+                onClick={() => handleOptionClick(category)}
+              >
+                {category.name}
               </div>
-            ))}
-          </div>
-       
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

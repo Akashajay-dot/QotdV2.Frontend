@@ -1,157 +1,164 @@
-.QuestionBank{
-    width: 100vw;
-    height: 87vh;
-   display: flex;
-   flex-direction: column;
-   /* justify-content: center;  */
-   align-items: center;
-   gap: 1rem;
+.QuestionBank {
+  width: 100vw;
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;  */
+  align-items: center;
+  gap: 1rem;
 }
-.topQB{
-    width:85vw;
-    height: 8vh;
-    display: flex;
-    justify-content: space-between;
-    /* background-color: antiquewhite; */
-    align-items: center;
+.topQB {
+  width: 85vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: antiquewhite; */
+  align-items: center;
 }
-.bottom{
-    width:85vw;
-    height: 70vh;
-    overflow:scroll;
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-   gap: 1rem;
-   /* background-color: aqua; */
-
+.bottom {
+  width: 85vw;
+  height: 70vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: aqua; */
 }
 .bottom::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-.QBbtns{
-    display: flex;
-    gap: 1rem;
+.QBbtns {
+  display: flex;
+  gap: 1rem;
 }
-.opt{
-    background-color: transparent;
-    border-radius: 5px;
-    border:  2px solid white;
-    color: white;
-    padding-inline: 1rem;
-    /* padding-block: 0.3rem; */
-    height: 2rem;
+.SearchIcon{
+  fill: white !important;
 }
-.QBCat{
-    color: white;
-}
-.allopt{
-    background-color: #7271717a;
-    border-radius: 5px;
-    border:  2px solid white;
-    color: white;
-    padding-inline: 1rem;
-    height: 2rem;
-}
- .publishedopt{
-    background-color: #7271717a;
-    border-radius: 5px;
-    border:  2px solid white;
-    color: white;
-    padding-inline: 1rem;
-    height: 2rem;
-}
-
-
-.unPublishedopt{
-    background-color: #7271717a;
-    border-radius: 5px;
-    border:  2px solid white;
-    color: white;
-    padding-inline: 1rem;
-    height: 2rem;
-}.previousopt{
-    background-color: #7271717a;
-    border-radius: 5px;
-    border:  2px solid white;
-    color: white;
-    padding-inline: 1rem;
-    height: 2rem;
-}
-.QBsearch{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.QBCat{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-.catinner{
-    background-color: #3d3d3d86;
-    width: 14rem;
-    height: 2.5rem;
-    border-radius: 5px;
-    border: 1px solid white;
-    display: flex;
-    align-items: center;
-}
-.searchip{
-    width: 12rem;
-    height: 2.3rem;
-    border-radius: 5px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1rem;
-
+.opt {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  padding-inline: 1rem;
+  /* padding-block: 0.3rem; */
+  height: 2rem;
+  font-size: 0.9rem;
 
 }
-.searchip:focus 
-{ outline: none; 
+.QBCat {
+  color: white;
 }
-.searchbtn{
-    background-color: transparent;
-width: 1.9rem;
-height: 1.5rem;
-
-
+.allopt {
+  background-color: #7271717a;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  padding-inline: 1rem;
+  height: 2rem;
+  font-size: 0.9rem;
 }
-.DeletePopOver{
-    position: fixed;  /* Position the div relative to the viewport */
-    top: 20;
-    left: 10;
-    width: 30vw;      /* Full width of the viewport */
-    height: 35vh;     /* Full height of the viewport */
-    background-color: #ffffff;  /* Semi-transparent background for overlay effect */
-    z-index: 9999;    /* High z-index to ensure it is above all other elements */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    gap: 1rem;
-}
-.DeletePopOver-p{
-   text-align: center;
-}
-.DeletePopOver-Btns{
-    display: flex;
-    gap: 2.5rem;
-}
-.DeletePopOver-Btn{
-padding-inline: 2rem;
-padding-block: 0.5rem;
-border-radius:5px;
-font-size: 1rem;
-color: #ffffff;
+.publishedopt {
+  background-color: #7271717a;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  padding-inline: 1rem;
+  height: 2rem;
+  font-size: 0.9rem;
 
 }
-.DeletePopOver-Btns-cancel{
-    background-color: hsla(0, 0%, 61%, 0.695);
-}
-.DeletePopOver-Btns-delete{
-    background-color: hsla(0, 100%, 50%, 0.695);
 
+.unPublishedopt {
+  background-color: #7271717a;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  padding-inline: 1rem;
+  height: 2rem;
+  font-size: 0.9rem;
+
+} 
+.previousopt {
+  background-color: #7271717a;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  padding-inline: 1rem;
+  height: 2rem;
+  font-size: 0.9rem;
+
+}
+.QBsearch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.QBCat {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.catinner {
+  background-color: #0F0F0F;
+  width: 18rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchip {
+  padding-left: 0.5rem;
+  width: 16rem;
+  height: 2.3rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+.searchip:focus {
+  outline: none;
+}
+.searchbtn {
+  background-color: transparent;
+  width: 1.9rem;
+  height: 1.5rem;
+}
+.DeletePopOver {
+  position: fixed; /* Position the div relative to the viewport */
+  top: 20;
+  left: 10;
+  width: 30vw; /* Full width of the viewport */
+  height: 35vh; /* Full height of the viewport */
+  background-color: #ffffff; /* Semi-transparent background for overlay effect */
+  z-index: 9999; /* High z-index to ensure it is above all other elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 1rem;
+}
+.DeletePopOver-p {
+  text-align: center;
+}
+.DeletePopOver-Btns {
+  display: flex;
+  gap: 2.5rem;
+}
+.DeletePopOver-Btn {
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+.DeletePopOver-Btns-cancel {
+  background-color: hsla(0, 0%, 61%, 0.695);
+}
+.DeletePopOver-Btns-delete {
+  background-color: hsla(0, 100%, 50%, 0.695);
 }

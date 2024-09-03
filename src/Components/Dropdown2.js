@@ -1,38 +1,34 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
 import "../Styles/DropDown.css";
-import { GlobalStateContext } from '../Context/GlobalStateContext';
+import { GlobalStateContext } from "../Context/GlobalStateContext";
 
 function DropDown2({ heading, onChange }) {
-//   const [isOpen, setIsOpen] = useState(false);
-  const { state} = useContext(GlobalStateContext);
-  const [categories, setCategories]=useState({
-    categoryId:-1,
 
-    name:'All',
-    
-  })
-  const [updatedCategory,setupdatedCategory] = useState([])
-useEffect(()=>{
 
-  const updated =[...state.categories,categories]
-  setupdatedCategory(updated);
+  const { state } = useContext(GlobalStateContext);
+  const [categories, setCategories] = useState({
+    categoryId: -1,
+    name: "All",
+  });
+  const [updatedCategory, setupdatedCategory] = useState([]);
 
-},[])
 
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//   };
+  useEffect(() => {
+    const updated = [...state.categories, categories];
+    setupdatedCategory(updated);
+  }, []);
+
 
   const handleOptionClick = (category) => {
     onChange(category);
-    // setIsOpen(false);
   };
 
+  
   return (
     <div className="menu">
       <div className="item">
         <div className="drop">
-          <a href="#" className="link" >
+          <a href="#" className="link">
             <span>{heading}</span>
             <svg viewBox="0 0 360 360" preserveAspectRatio="xMidYMid meet">
               <g id="SVGRepo_iconCarrier">
@@ -46,17 +42,19 @@ useEffect(()=>{
             </svg>
           </a>
         </div>
-        
-          <div className="submenu">
-            {updatedCategory.map((category) => (
-              <div key={category.categoryId} className="submenu-item">
-                <div className="submenu-link" onClick={() => handleOptionClick(category)}>
-                  {category.name}
-                </div>
+
+        <div className="submenu">
+          {updatedCategory.map((category) => (
+            <div key={category.categoryId} className="submenu-item">
+              <div
+                className="submenu-link"
+                onClick={() => handleOptionClick(category)}
+              >
+                {category.name}
               </div>
-            ))}
-          </div>
-       
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
