@@ -124,11 +124,15 @@ function QBblock({ id, onchange, previous }) {
   const changeDate = async () => {
     try {
       // Send PUT request to the backend API
+      
+      const formattedDate = dayjs(value).format("YYYY-MM-DD");
+      const dateToSend = value ? formattedDate : null;
+
       const response = await axios.put(
         `${apiBaseUrl}/api/questions/update`,
         {
           QuestionId: id,
-          Date: value,
+          Date: dateToSend,
         },
         {
           headers: {
@@ -215,7 +219,10 @@ function QBblock({ id, onchange, previous }) {
             <DemoContainer components={["DatePicker"]}>
               <DatePicker
                 value={QuestionDate != null ? dayjs(QuestionDate) : value}
-                onChange={(newValue) => dateChange(newValue)}
+                onChange={(newValue) => {
+                  const dateOnly = newValue.startOf('day');
+                  dateChange(dateOnly);
+                }}
                 minDate={minDate}
                 readOnly={isToday}
                 sx={{
