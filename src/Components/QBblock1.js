@@ -19,7 +19,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 dayjs.extend(utc);
 
 function QBblock1({ id, unAnswered }) {
-  const { state, setLoading, setQId, setDates } =
+  const { state, setLoading, setQId, setDates,setprevQid } =
     useContext(GlobalStateContext);
   const navigate = useNavigate();
   const [Question, setQuestion] = useState("");
@@ -40,8 +40,8 @@ function QBblock1({ id, unAnswered }) {
 
   const approve = () => {
     //   setQId(id);
-
-    navigate(`/prevQuestionspage/${id}`);
+    setprevQid(id)
+    navigate(`/prevQuestionspage`);
   };
   useEffect(() => {
     fetchDates();

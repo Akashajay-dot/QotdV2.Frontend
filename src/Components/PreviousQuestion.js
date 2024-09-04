@@ -3,13 +3,15 @@ import React, { useContext, useEffect, useState } from "react";
 import "../Styles/LandingPage.css";
 import { GlobalStateContext } from "../Context/GlobalStateContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import { toast, ToastContainer } from "react-toastify";
 import Popover from "./Popover";
 import { Link, useParams } from "react-router-dom";
 import Loading from "./Loading";
 
 function PreviousQuestion() {
-  const { state, setLogedin, setisAnswered, setLoading, setToggle } =
+  const { state, setLogedin, setisAnswered, setLoading, setToggle,setprevQid } =
     useContext(GlobalStateContext);
   const [unanswered, setunanswered] = useState("");
   const [QuestionId, setQuestionId] = useState();
@@ -24,8 +26,10 @@ function PreviousQuestion() {
   const [justAnswered, setjustAnswered] = useState(false);
   const [popover, setPopover] = useState(false);
   const [noQuestion, setNoquestion] = useState(false);
-  const { message } = useParams();
+  const navigate =  useNavigate();
+  // const { message } = useParams();
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+  const token = localStorage.getItem("token");
 
   const handleSelectionChange = (answerId) => {
     if (hasMultipleAnswers) {
@@ -40,22 +44,31 @@ function PreviousQuestion() {
   };
 
   useEffect(() => {
+    setLoading(false);
+    if(state.prevQid=="")
+{
+  navigate("/prevQuestions")
+}
     const fetchQuestion = async () => {
       try {
         const response = await axios.get(
-          `${apiBaseUrl}/api/FetchQuestion/${message}`
+          `${apiBaseUrl}/api/FetchQuestion/${state.prevQid}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
 
         if (response.status === 200) {
           //   console.log(response);
-          setQuestion(response.data[0].Question.Question);
-          setPoint(response.data[0].Question.Point);
-          sethasMultipleAnswers(response.data[0].Question.HasMultipleAnswers);
-          const data = response.data[0].AnswerOptions;
+          setQuestion(response.data.question.question);
+          setPoint(response.data.question.point);
+          sethasMultipleAnswers(response.data.question.hasMultipleAnswers);
+          const data = response.data.answerOptions;
           const answersArray = [];
-          for (let i = 0; i < response.data[0].AnswerKeys.length; i++) {
-            const option = response.data[0].AnswerKeys[i];
-            const opt = option.AnswerOption.AnswerOptionId;
+          for (let i = 0; i < response.data.answerKeys.length; i++) {
+            const option = response.data.answerKeys[i];
+            const opt = option.answerOption.answerOptionId;
             answersArray[i] = opt;
           }
           SetAnswer(answersArray);
@@ -63,8 +76,8 @@ function PreviousQuestion() {
           for (let i = 0; i < data.length; i++) {
             const option = data[i];
             optionsArray.push({
-              AnswerOptionId: option.AnswerOptionId,
-              Option: option.Option,
+              AnswerOptionId: option.answerOptionId,
+              Option: option.option,
             });
           }
           setOptions(optionsArray);
@@ -113,7 +126,7 @@ function PreviousQuestion() {
 
   const Post = () => {
     const data = {
-      QuestionId: message,
+      QuestionId: state.prevQid,
       UserId: state.id,
       AnswerOptionId: selectedAnswers,
       isCorrect: isCorrect,
@@ -123,12 +136,14 @@ function PreviousQuestion() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        setprevQid("");
       })
       .catch((error) => {
         console.error("Error:", error);

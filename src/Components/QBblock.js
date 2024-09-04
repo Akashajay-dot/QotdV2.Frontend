@@ -270,6 +270,9 @@ function QBblock({ id, onchange, previous }) {
                 shouldDisableDate={(date) =>
                   state.dates.includes(dayjs(date).format("YYYY-MM-DD"))
                 }
+                InputProps={{
+                  readOnly: true, // Prevent typing in the DatePicker
+                }}
               />
               {/* defaultValue={dayjs(QuestionDate)} */}
               {/* (newValue) => setValue(newValue) */}

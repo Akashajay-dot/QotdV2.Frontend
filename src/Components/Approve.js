@@ -30,6 +30,9 @@ function Approve() {
 
 
   useEffect(() => {
+    if(state.QId==""){
+      navigate("/questions")
+    }
     setLoading(false);
 
     if (textareaRef.current) {
@@ -113,6 +116,13 @@ function Approve() {
         answersArray.push({ text: "", isCorrect: false });
     }
     setAnswers(answersArray);
+    if (
+      answersArray.length === 2 && // Check if the length is 2
+      answersArray.filter((answer) => answer.isCorrect).length === 1 // Check if exactly one isCorrect is true
+    ) {
+      setSelectedCategory("True/False");
+    }
+
   };
 
 

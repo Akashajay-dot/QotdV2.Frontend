@@ -1,9 +1,17 @@
-import React from "react";
-import image from "../Assets/404.jpg";
+import React, { useContext, useEffect } from "react";
+import image from "../Assets/404error.png";
+import { GlobalStateContext } from "../Context/GlobalStateContext";
 function NotFoundComponent() {
+  const {
+    setLoading
+  } = useContext(GlobalStateContext);
+  useEffect(()=>{
+    setLoading(false);
+  })
   return (
-    <div>
+    <div className="errMain">
       <img
+      className="eroor"
         src={image}
         alt="error loading
         "

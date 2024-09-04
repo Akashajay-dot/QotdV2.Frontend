@@ -139,7 +139,7 @@ function App() {
               element={state.isLogedin ? <Prev /> : <LoginPage />}
             />
             <Route
-              path="/prevQuestionspage/:message"
+              path="/prevQuestionspage"
               element={state.isLogedin ? <PreviousQuestion /> : <LoginPage />}
             />
 

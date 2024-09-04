@@ -32,3 +32,19 @@ code {
 .css-sx5hge{
   padding-top: 0px !important;
 }
+button:hover{
+  cursor: pointer;
+}
+.errMain{
+  width: 100vw;
+  height: 87vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eroor{
+object-fit: contain;
+height: 70vh;
+/* width: 100vw; */
+border-radius: 20px;
+}

@@ -161,6 +161,7 @@ const initialState = {
   dates: [],
   email: "",
   expiresAt: null,
+  prevQid:"",
 };
 
 const GlobalStateProvider = ({ children }) => {
@@ -174,6 +175,12 @@ const GlobalStateProvider = ({ children }) => {
     setState((prevState) => ({
       ...prevState,
       email: i,
+    }));
+  };
+  const setprevQid = (i) => {
+    setState((prevState) => ({
+      ...prevState,
+      prevQid: i,
     }));
   };
 
@@ -295,6 +302,7 @@ const GlobalStateProvider = ({ children }) => {
         setTotaluser,
         setRank,
         resetState,
+        setprevQid,
       }}
     >
       {children}

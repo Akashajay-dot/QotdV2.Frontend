@@ -14,6 +14,16 @@
 .bin-bottom {
   width: 10px;
 }
+.bin-button:disabled{
+  /* width: 20px; */
+  background-color: rgb(80, 80, 80);
+}
+
+.bin-button:disabled:hover{
+  /* width: 20px; */
+  background-color: rgb(80, 80, 80);
+}
+
 .bin-top {
   width: 13px;
   transform-origin: right;
@@ -22,6 +32,10 @@
 .bin-button:hover .bin-top {
   transform: rotate(45deg);
 }
+.bin-button:disabled:hover .bin-top {
+  transform: none;
+}
+
 .bin-button:hover {
   background-color: rgb(255, 0, 0);
 }
