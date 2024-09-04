@@ -41,6 +41,7 @@ function App() {
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const [showModal, setShowModal] = useState(false);
 
+  
   useEffect(() => {
     if (state.expiresAt) {
       const timer = setTimeout(() => {
