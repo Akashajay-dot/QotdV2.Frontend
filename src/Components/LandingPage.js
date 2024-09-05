@@ -159,9 +159,11 @@ function LandingPage() {
       {(noQuestion || state.isAnswered) && !pAns && (
         <div className="noQuestion">
           <h2>
-            Quiz done! More brain jazz tomorrow! 🚀🎉
+           Quiz Complete! 🎉🧠
+            Great job today—get ready for more fun tomorrow! 🚀
             <br />
-            Ready to create a question? 🌟✏️
+            Ready to create a new question? 🌟✏️ Or explore previous questions
+            you’ve tackled! 🔍📜
           </h2>
           <div className="popBtns">
             <Link to={"/postQuestions"}>
