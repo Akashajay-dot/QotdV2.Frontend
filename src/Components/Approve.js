@@ -10,11 +10,10 @@ import { toast, ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
 function Approve() {
-
   const textareaRef = useRef(null);
   const [postQuestion, setPostQuestion] = useState("");
   const [answers, setAnswers] = useState([{ text: "", isCorrect: false }]);
-  const [category, setCategory] = useState("Multiple Choice"); 
+  const [category, setCategory] = useState("Multiple Choice");
   const [selectedCategory, setSelectedCategory] = useState("Multiple Choice");
   const [selectedType, setSelectedType] = useState("Select Type");
   const [selectedTypeId, setSelectedTypeId] = useState();
@@ -28,10 +27,9 @@ function Approve() {
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const token = localStorage.getItem("token");
 
-
   useEffect(() => {
-    if(state.QId==""){
-      navigate("/questions")
+    if (state.QId == "") {
+      navigate("/questions");
     }
     setLoading(false);
 
@@ -40,7 +38,6 @@ function Approve() {
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   }, [postQuestion]);
-
 
   useEffect(() => {
     if (category === "Multiple Choice") {
@@ -60,7 +57,6 @@ function Approve() {
     }
   }, [category]);
 
-
   useEffect(() => {
     const fetch = async () => {
       try {
@@ -76,19 +72,16 @@ function Approve() {
           console.log(response.data);
           setresponse(response.data);
         }
-      } catch (error) {
-      }
+      } catch (error) {}
     };
     fetch();
   }, []);
-
 
   useEffect(() => {
     if (response1 != null) {
       assign();
     }
   }, [response1]);
-
 
   const assign = () => {
     setPostQuestion(response1.question.question);
@@ -117,14 +110,12 @@ function Approve() {
     }
     setAnswers(answersArray);
     if (
-      answersArray.length === 2 && // Check if the length is 2
-      answersArray.filter((answer) => answer.isCorrect).length === 1 // Check if exactly one isCorrect is true
+      answersArray.length === 2 && 
+      answersArray.filter((answer) => answer.isCorrect).length === 1 
     ) {
       setSelectedCategory("True/False");
     }
-
   };
-
 
   const handleQuestion = (e) => {
     setPostQuestion(e.target.value);
@@ -138,19 +129,16 @@ function Approve() {
     }
   };
 
-
   const handleAnswerChange = (index, text, isCorrect) => {
     const newAnswers = [...answers];
     newAnswers[index] = { text, isCorrect };
     setAnswers(newAnswers);
   };
 
-
   const handleDeleteAnswer = (index) => {
     const newAnswers = answers.filter((_, i) => i !== index);
     setAnswers(newAnswers);
   };
-
 
   const addAnswerOption = () => {
     if (category === "Multiple Choice" && answers.length < 4) {
@@ -160,23 +148,19 @@ function Approve() {
     }
   };
 
-
   const handleCategoryChange = (selectedCategory) => {
     setCategory(selectedCategory);
     setSelectedCategory(selectedCategory);
   };
-
 
   const handleTypeChange = (selectedType) => {
     setSelectedType(selectedType.name);
     setSelectedTypeId(selectedType.categoryId);
   };
 
-
   const handlePointsChange = (selectedPoints) => {
     setSelectedPoints(selectedPoints);
   };
-
 
   const post = async (e) => {
     e.preventDefault();
@@ -219,7 +203,6 @@ function Approve() {
         return;
       }
     }
-
 
     const correctAnswersCount = answers.filter(
       (answer) => answer.isCorrect

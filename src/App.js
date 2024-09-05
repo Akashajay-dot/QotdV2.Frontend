@@ -41,7 +41,6 @@ function App() {
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const [showModal, setShowModal] = useState(false);
 
-  
   useEffect(() => {
     if (state.expiresAt) {
       const timer = setTimeout(() => {
@@ -56,7 +55,6 @@ function App() {
     setShowModal(false);
     setLogedin(false);
     localStorage.removeItem("token");
-    // navigate('/')
   };
   useEffect(() => {
     const credential = localStorage.getItem("token");
@@ -72,7 +70,6 @@ function App() {
             }
           );
 
-          // console.log(res);
 
           if (res.data.isvalid) {
             setId(res.data.userId);
@@ -81,7 +78,6 @@ function App() {
             setLogedin(true);
             setPic(res.data.payload.picture);
             setTotaluser(res.data.totalUsers);
-            // setPic(res.data.Payload.picture);
             setEmail(res.data.payload.email);
             setRank(res.data.userRank);
 
@@ -89,7 +85,6 @@ function App() {
             setLoading(true);
             if (res.data.isAdmin) {
               setAdmin(true);
-              // console.log("i am admin")
             }
           } else {
           }

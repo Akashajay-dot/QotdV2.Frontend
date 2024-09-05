@@ -2,23 +2,18 @@ import React from "react";
 import "../Styles/AnswerOptions.css";
 
 function AnswerOptions({ index, answer, isCorrect, onChange, onDelete }) {
-
-
   const handleInputChange = (e) => {
     onChange(e.target.value, isCorrect);
   };
-
 
   const handleDeleteClick = () => {
     onDelete(index);
   };
 
-
   const handleCorrectChange = (e) => {
-    e.preventDefault(); 
-    onChange(answer, !isCorrect); 
+    e.preventDefault();
+    onChange(answer, !isCorrect);
   };
-
 
   let currentChar = "A";
   function incrementChar() {
@@ -26,7 +21,6 @@ function AnswerOptions({ index, answer, isCorrect, onChange, onDelete }) {
     return currentChar;
   }
 
-  
   return (
     <div className="ansOption">
       <button type="button" className="ansSelect">

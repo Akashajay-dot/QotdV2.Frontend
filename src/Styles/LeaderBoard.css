@@ -4,25 +4,20 @@
 }
 
 .avatar {
-  width: 80px; /* Adjust size as needed */
-  /* height: 100px;  */
-  border-radius: 50%; /* Makes the avatar circular */
+  width: 80px;
+  border-radius: 50%; 
   object-fit: contain;
 }
 
 .medal {
   position: absolute;
-  bottom: -6px; /* Pushes the medal partially outside the avatar */
-  right: -5px; /* Pushes the medal partially outside the avatar */
+  bottom: -6px; 
+  right: -5px;
   object-fit: contain;
-  /* width: 40px;  */
-  height: 40px; /* Adjust size as needed */
-  /* Optionally add a border or other styles */
+  height: 40px; 
 }
 .LeaderBoard {
-  /* height: 90vh; */
   width: 100vw;
-  /* background-color: aqua; */
   display: flex;
   justify-content: center;
 }
@@ -32,7 +27,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* background-color: aqua; */
   width: 45vw;
   gap: 1rem;
 }
@@ -61,22 +55,19 @@
 .userlist {
   width: 38vw;
   height: 40vh;
-  /* background-color: aliceblue; */
   overflow-y: scroll;
-  scrollbar-width: none; /* For Firefox */
+  scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  /* gap: 0.5rem; */
 }
 .userlist-div::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+  display: none;
 }
 
 .pos1 {
   background-color: #0f0f0fb6;
-  /* background-color: wheat; */
   width: 10vw;
   flex-direction: column;
   gap: 0.5rem;
@@ -101,7 +92,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow:hidden; */
 }
 .name {
   font-size: 0.8rem;
@@ -109,7 +99,6 @@
 }
 .UserList {
   width: 38vw;
-  /* background-color: #fff; */
   height: 8vh;
   border-radius: 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.396);

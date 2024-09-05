@@ -3,18 +3,13 @@ import "../Styles/DropDown.css";
 import { GlobalStateContext } from "../Context/GlobalStateContext";
 
 function DropDown1({ heading, onChange }) {
-
-
   const { state } = useContext(GlobalStateContext);
-
 
   const handleOptionClick = (category) => {
     onChange(category);
   };
- 
 
   return (
-    
     <div className="menu">
       <div className="item">
         <div className="drop">

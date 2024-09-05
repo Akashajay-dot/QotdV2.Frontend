@@ -17,7 +17,6 @@
   background-color: transparent;
 
   border-radius: 5px;
-  /* border: 2px solid hsla(0, 0%, 24%, 0.618); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +31,6 @@
 .QBright {
   display: flex;
   align-items: center;
-  /* gap: rem; */
   justify-content: flex-end;
 }
 .approveIndicator {
@@ -55,23 +53,12 @@
   object-fit: contain;
   height: 1rem;
 }
-/* .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
-  color: white !important ;
-}
-.css-i4bv87-MuiSvgIcon-root {
-  fill: rgb(107, 107, 107) !important;
-}
-.css-10o2lyd-MuiStack-root {
-  padding-top: 0 !important;
-}
-.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
-  width: 51% !important;
-} */
+
 .cancelBtn {
   background-color: transparent;
 }
 .cancelBtn:disabled .cancelicon {
-  fill: gray !important; /* Color when disabled */
+  fill: gray !important; 
 }
 .cancelicon {
   fill: white !important;
@@ -82,9 +69,7 @@
 .cancelicon:active {
   fill: white !important;
 }
-/* .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-  padding-right: 0 !important ;
-} */
+
 .dateInactive {
   color: white;
 }

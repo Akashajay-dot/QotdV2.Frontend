@@ -4,7 +4,6 @@
   z-index: 999;
   position: absolute;
   color: #fff;
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -28,7 +27,6 @@
 }
 .addQstnBtn,
 .prvQstnBtn {
-  /* height: 1rem; */
   padding-inline: 1rem;
   padding-block: 0.5rem;
   border-radius: 5px;

@@ -45,9 +45,8 @@ function PostQuestions() {
   }, [state.toggle]);
 
   useEffect(() => {
-    // Adjust the width of the textarea based on the scroll width
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"; // Reset the height to auto to get the correct scrollHeight
+      textareaRef.current.style.height = "auto"; 
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   }, [postQuestion, postSnapShot]);
@@ -58,7 +57,6 @@ function PostQuestions() {
   }, [postable]);
 
   useEffect(() => {
-    // Adjust the number of answer options based on the selected category
     if (category === "Multiple Choice") {
       setAnswers((prevAnswers) => {
         const newAnswers = [...prevAnswers];
@@ -93,18 +91,15 @@ function PostQuestions() {
     }
   };
 
-  // const handleAnswerChange = (index, text, isCorrect) => {
-  //   const newAnswers = [...answers];
-  //   newAnswers[index] = { text, isCorrect };
-  //   setAnswers(newAnswers);
-  // };
+ 
 
   const handleAnswerChange = (index, text, isCorrect) => {
     if (category === "True/False" && isCorrect) {
-      // Ensure only one answer can be correct
       setAnswers((prevAnswers) =>
         prevAnswers.map((answer, i) =>
-          i === index ? { text, isCorrect: true } : { ...answer, isCorrect: false }
+          i === index
+            ? { text, isCorrect: true }
+            : { ...answer, isCorrect: false }
         )
       );
     } else {
@@ -135,99 +130,13 @@ function PostQuestions() {
   const handleTypeChange = (selectedType) => {
     setSelectedType(selectedType.name);
     setSelectedTypeId(selectedType.categoryId);
-    // if(SelectedType == )
   };
 
   const handlePointsChange = (selectedPoints) => {
     setSelectedPoints(selectedPoints);
   };
 
-  // const handleBack =()=>{
-  //   navigate("/");
-  // }
-  // const post = (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     if (!postQuestion.trim()) {
-  //       toast.error("Please enter a question.", {
-  //         autoClose: 5000,
-  //         onClose: () => (toastRef.current = null),
-  //       });
-  //       return;
-  //     }
-  //     if (category === "True/False" && !answers.some((answer) => answer.isCorrect)) {
-  //       toast.error("Please mark exactly one answer as correct for true/false questions.", { autoClose: 500 });
-  //       return;
-  //     }
-
-  //     if (!postSnapShot.trim()) {
-  //       toast.error("Please enter a snapshot.", { autoClose: 500 });
-
-  //       return;
-  //     }
-
-  //     if (answers.some((answer) => !answer.text.trim())) {
-  //       toast.error("Please enter valid answers.", { autoClose: 500 });
-
-  //       return;
-  //     }
-  //     if (category === "Select Category") {
-  //       toast.error("Please select a category.", { autoClose: 500 });
-
-  //       return;
-  //     }
-
-  //     if (selectedType === "Select Type") {
-  //       toast.error("Please select a type.", { autoClose: 500 });
-
-  //       return;
-  //     }
-
-  //     if (selectedPoints === "Add Points") {
-  //       toast.error("Please select the points.", { autoClose: 500 });
-
-  //       return;
-  //     }
-
-  //     if (category === "Multiple Choice") {
-  //       if (answers.length < 2) {
-  //         toast.error(
-  //           "Please provide at least 2 answers for multiple-choice questions.",
-  //           { autoClose: 500 }
-  //         );
-
-  //         return;
-  //       }
-  //       if (!answers.some((answer) => answer.isCorrect)) {
-  //         toast.error("Please mark at least one answer as correct.", {
-  //           autoClose: 500,
-  //         });
-
-  //         return;
-  //       }
-  //     } else if (category === "True/False") {
-  //       if (answers.length !== 2) {
-  //         toast.error(
-  //           "Please provide exactly 2 answers for true/false questions.",
-  //           { autoClose: 500 }
-  //         );
-
-  //         return;
-  //       }
-  //     }
-  //     const correctAnswersCount = answers.filter(
-  //       (answer) => answer.isCorrect
-  //     ).length;
-  //     if (correctAnswersCount > 1) {
-  //       sethasMultipleAns(true);
-  //     } else {
-  //       sethasMultipleAns(false);
-  //     }
-  //     setPostable(true);
-  //   } catch (error) {
-  //     console.error("Error during post validation:", error);
-  //   }
-  // };
+ 
   const post = (e) => {
     e.preventDefault();
     try {
@@ -241,11 +150,17 @@ function PostQuestions() {
         return;
       }
 
-      if (category === "True/False" && !answers.some((answer) => answer.isCorrect)) {
+      if (
+        category === "True/False" &&
+        !answers.some((answer) => answer.isCorrect)
+      ) {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please mark exactly one answer as correct for true/false questions.", { autoClose: 500 });
+        toastRef.current = toast.error(
+          "Please mark exactly one answer as correct for true/false questions.",
+          { autoClose: 500 }
+        );
         return;
       }
 
@@ -253,7 +168,9 @@ function PostQuestions() {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please enter a snapshot.", { autoClose: 500 });
+        toastRef.current = toast.error("Please enter a snapshot.", {
+          autoClose: 500,
+        });
         return;
       }
 
@@ -261,7 +178,9 @@ function PostQuestions() {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please enter valid answers.", { autoClose: 500 });
+        toastRef.current = toast.error("Please enter valid answers.", {
+          autoClose: 500,
+        });
         return;
       }
 
@@ -269,7 +188,9 @@ function PostQuestions() {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please select a category.", { autoClose: 500 });
+        toastRef.current = toast.error("Please select a category.", {
+          autoClose: 500,
+        });
         return;
       }
 
@@ -277,7 +198,9 @@ function PostQuestions() {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please select a type.", { autoClose: 500 });
+        toastRef.current = toast.error("Please select a type.", {
+          autoClose: 500,
+        });
         return;
       }
 
@@ -285,7 +208,9 @@ function PostQuestions() {
         if (toastRef.current) {
           toast.dismiss(toastRef.current);
         }
-        toastRef.current = toast.error("Please select the points.", { autoClose: 500 });
+        toastRef.current = toast.error("Please select the points.", {
+          autoClose: 500,
+        });
         return;
       }
 
@@ -294,14 +219,20 @@ function PostQuestions() {
           if (toastRef.current) {
             toast.dismiss(toastRef.current);
           }
-          toastRef.current = toast.error("Please provide at least 2 answers for multiple-choice questions.", { autoClose: 500 });
+          toastRef.current = toast.error(
+            "Please provide at least 2 answers for multiple-choice questions.",
+            { autoClose: 500 }
+          );
           return;
         }
         if (!answers.some((answer) => answer.isCorrect)) {
           if (toastRef.current) {
             toast.dismiss(toastRef.current);
           }
-          toastRef.current = toast.error("Please mark at least one answer as correct.", { autoClose: 500 });
+          toastRef.current = toast.error(
+            "Please mark at least one answer as correct.",
+            { autoClose: 500 }
+          );
           return;
         }
       } else if (category === "True/False") {
@@ -309,12 +240,17 @@ function PostQuestions() {
           if (toastRef.current) {
             toast.dismiss(toastRef.current);
           }
-          toastRef.current = toast.error("Please provide exactly 2 answers for true/false questions.", { autoClose: 500 });
+          toastRef.current = toast.error(
+            "Please provide exactly 2 answers for true/false questions.",
+            { autoClose: 500 }
+          );
           return;
         }
       }
 
-      const correctAnswersCount = answers.filter((answer) => answer.isCorrect).length;
+      const correctAnswersCount = answers.filter(
+        (answer) => answer.isCorrect
+      ).length;
       if (correctAnswersCount > 1) {
         sethasMultipleAns(true);
       } else {

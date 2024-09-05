@@ -13,17 +13,14 @@ function Leaders({ pic, medal, id }) {
   useEffect(() => {
     try {
       const fetchUserdetails = async () => {
-        // http://localhost:57101/api/user/5
         const response = await axios.get(`${apiBaseUrl}/api/user/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        // return(response);
         console.log(response);
         setname(response.data.user.name);
         setPic(response.data.user.pic);
-        // console.log(response)
         setBadge(response.data.reputationName);
       };
       fetchUserdetails();
@@ -34,7 +31,6 @@ function Leaders({ pic, medal, id }) {
   return (
     <div className="pos1">
       <div class="avatar-container">
-        {/* <img src={picture} alt="Avatar" class="avatar"/> */}
         <Avatar
           alt=""
           src={picture}

@@ -12,14 +12,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 import moment from "moment";
-// import CancelIcon from '@mui/icons-material/Cancel';
 import utc from "dayjs/plugin/utc";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 dayjs.extend(utc);
 
 function QBblock1({ id, unAnswered }) {
-  const { state, setLoading, setQId, setDates,setprevQid } =
+  const { state, setLoading, setQId, setDates, setprevQid } =
     useContext(GlobalStateContext);
   const navigate = useNavigate();
   const [Question, setQuestion] = useState("");
@@ -32,15 +31,13 @@ function QBblock1({ id, unAnswered }) {
   const [isToday, setIsToday] = useState();
   const [isCorrect, setIscorrect] = useState();
   const minDate = dayjs();
-  // .add(1, 'day')
-  // const [dates, setDates] = useState([]);
+  
   const today = dayjs();
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const token = localStorage.getItem("token");
 
   const approve = () => {
-    //   setQId(id);
-    setprevQid(id)
+    setprevQid(id);
     navigate(`/prevQuestionspage`);
   };
   useEffect(() => {
@@ -100,11 +97,8 @@ function QBblock1({ id, unAnswered }) {
             const dateOnly = moment(dateTimeString).format("YYYY-MM-DD");
             setQuestionDate(dateOnly);
             const date = response.data.question.questionDate;
-            // console.log(dayjs(date));
             setIsToday(dayjs(date).isSame(today, "day"));
-            //  console.log( ""+(dayjs(date).isSame(minDate, 'day')));
           }
-          // setValue(QuestionDate);
         } else {
           console.log("No question available for today.");
         }
@@ -115,21 +109,8 @@ function QBblock1({ id, unAnswered }) {
     };
 
     fetchQuestion();
-    // setIsToday( (dayjs(QuestionDate).isSame(today, 'day')));
   }, [id]);
-  // const deleteQuestion=async ()=>{
-  //   try {
-  //     const response = await axios.delete(`http://localhost:57101/api/delete/${id}`);
-  //     if (response.status === 204) {
-  //       console.log("Question deleted successfully");
-  //       // Optionally, update your UI here to reflect the deletion
-
-  //   }
-  //   }
-  //   catch (error){
-  //     console.log(error);
-  //   }
-  // }
+  
 
   return (
     <div>

@@ -11,8 +11,14 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "./Loading";
 
 function PreviousQuestion() {
-  const { state, setLogedin, setisAnswered, setLoading, setToggle,setprevQid } =
-    useContext(GlobalStateContext);
+  const {
+    state,
+    setLogedin,
+    setisAnswered,
+    setLoading,
+    setToggle,
+    setprevQid,
+  } = useContext(GlobalStateContext);
   const [unanswered, setunanswered] = useState("");
   const [QuestionId, setQuestionId] = useState();
 
@@ -26,8 +32,7 @@ function PreviousQuestion() {
   const [justAnswered, setjustAnswered] = useState(false);
   const [popover, setPopover] = useState(false);
   const [noQuestion, setNoquestion] = useState(false);
-  const navigate =  useNavigate();
-  // const { message } = useParams();
+  const navigate = useNavigate();
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const token = localStorage.getItem("token");
 
@@ -45,14 +50,14 @@ function PreviousQuestion() {
 
   useEffect(() => {
     setLoading(false);
-    if(state.prevQid=="")
-{
-  navigate("/prevQuestions")
-}
+    if (state.prevQid == "") {
+      navigate("/prevQuestions");
+    }
     const fetchQuestion = async () => {
       try {
         const response = await axios.get(
-          `${apiBaseUrl}/api/FetchQuestion/${state.prevQid}`, {
+          `${apiBaseUrl}/api/FetchQuestion/${state.prevQid}`,
+          {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -60,7 +65,6 @@ function PreviousQuestion() {
         );
 
         if (response.status === 200) {
-          //   console.log(response);
           setQuestion(response.data.question.question);
           setPoint(response.data.question.point);
           sethasMultipleAnswers(response.data.question.hasMultipleAnswers);
@@ -164,7 +168,6 @@ function PreviousQuestion() {
               {" "}
               <button className="addQstnBtn">Add Questions</button>
             </Link>
-            {/* <Link to="/prevQuestion">  <button className='prvQstnBtn'>Prev Question</button> </Link> */}
           </div>
         </div>
       )}
@@ -172,7 +175,6 @@ function PreviousQuestion() {
         <div className="landingPage">
           <div className="questionsct">
             <div className="question">
-              {/* <h2 className='qestioninner'>{Question}</h2> */}
               <h2
                 className="qestioninner"
                 dangerouslySetInnerHTML={{ __html: Question }}
@@ -210,7 +212,6 @@ function PreviousQuestion() {
                     }
                   >
                     <h4>{option.Option}</h4>
-                    {/* <div className='round'></div> */}
                   </div>
                 </div>
               ))}
@@ -228,7 +229,6 @@ function PreviousQuestion() {
               </button>
             </div>
           </div>
-          {/* <ToastContainer /> */}
           {popover && (
             <Popover popover={popover} iscorrect={isCorrect} point={point} />
           )}

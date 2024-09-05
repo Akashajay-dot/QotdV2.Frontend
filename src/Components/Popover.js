@@ -7,7 +7,6 @@ function Popover({ popover, iscorrect, point }) {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/prevQuestions");
-    // navigate(0);
 
     setToggle(!state.toggle);
   };
@@ -30,7 +29,6 @@ function Popover({ popover, iscorrect, point }) {
           {" "}
           <button className="addQstnBtn">Add Questions</button>
         </Link>
-        {/* <Link  to={"/prevQuestion"}> <button className='prvQstnBtn'  >Prev   Questions</button></Link> */}
         <button className="prvQstnBtn" onClick={handleClick}>
           Prev Questions
         </button>

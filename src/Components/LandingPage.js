@@ -9,8 +9,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 
 function LandingPage() {
-
-
   const { state, setLogedin, setisAnswered, setLoading } =
     useContext(GlobalStateContext);
   const [Question, setQuestion] = useState("");
@@ -31,13 +29,11 @@ function LandingPage() {
   let currentChar = "A";
   let i = 0;
 
-
   function incrementChar() {
     currentChar = String.fromCharCode(currentChar.charCodeAt(0) + i);
     i = 1;
     return currentChar;
   }
-
 
   useEffect(() => {
     if (justAnswered) {
@@ -45,7 +41,6 @@ function LandingPage() {
     }
   }, [isCorrect]);
 
-  
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
@@ -161,7 +156,6 @@ function LandingPage() {
 
   return (
     <div className="Lmain">
-      {/* {state.loading && <Loading/>} */}
       {(noQuestion || state.isAnswered) && !pAns && (
         <div className="noQuestion">
           <h2>
@@ -178,7 +172,6 @@ function LandingPage() {
               {" "}
               <button className="prvQstnBtn">Prev Question</button>{" "}
             </Link>
-            {/* <button className='prvQstnBtn' >Prev Questions</button> */}
           </div>
         </div>
       )}
@@ -186,7 +179,6 @@ function LandingPage() {
         <div className="landingPage">
           <div className="questionsct">
             <div className="question">
-              {/* <h2 className='qestioninner'>{Question}</h2> */}
               <h2
                 className="qestioninner"
                 dangerouslySetInnerHTML={{ __html: Question }}
@@ -229,7 +221,6 @@ function LandingPage() {
                     }
                   >
                     <h4>{option.option}</h4>
-                    {/* {(selectedAnswers.includes(option.AnswerOptionId)) && <div className='round'></div>} */}
                   </div>
                 </div>
               ))}

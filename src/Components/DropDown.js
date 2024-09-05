@@ -1,10 +1,7 @@
 import React from "react";
 import "../Styles/DropDown.css";
 
-
 function DropDown({ heading, options, onChange }) {
-
-
   return (
     <div className="menu">
       <div className="item">

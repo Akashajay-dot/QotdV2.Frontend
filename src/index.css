@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   max-width: 100vw;
   height: 100vh;
-  /* background-image: url("./Assets/background.jpg"); */
+ 
 
   background-size: cover;
   background-position: center;
@@ -27,24 +27,23 @@ code {
   padding-bottom: 0;
 }
 .css-10o2lyd-MuiStack-root {
-  padding-top: 0px !important; /* Use !important to force the removal of padding */
+  padding-top: 0px !important; 
 }
-.css-sx5hge{
+.css-sx5hge {
   padding-top: 0px !important;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
-.errMain{
+.errMain {
   width: 100vw;
   height: 87vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.eroor{
-object-fit: contain;
-height: 70vh;
-/* width: 100vw; */
-border-radius: 20px;
+.eroor {
+  object-fit: contain;
+  height: 70vh;
+  border-radius: 20px;
 }

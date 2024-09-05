@@ -3,7 +3,6 @@
   height: 87vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;  */
   align-items: center;
   gap: 1rem;
 }
@@ -12,7 +11,6 @@
   height: 8vh;
   display: flex;
   justify-content: space-between;
-  /* background-color: antiquewhite; */
   align-items: center;
 }
 .bottom {
@@ -23,7 +21,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  /* background-color: aqua; */
 }
 .bottom::-webkit-scrollbar {
   display: none;
@@ -41,7 +38,6 @@
   border: 2px solid white;
   color: white;
   padding-inline: 1rem;
-  /* padding-block: 0.3rem; */
   height: 2rem;
   font-size: 0.9rem;
 
@@ -128,13 +124,13 @@
   height: 1.5rem;
 }
 .DeletePopOver {
-  position: fixed; /* Position the div relative to the viewport */
+  position: fixed; 
   top: 20;
   left: 10;
-  width: 30vw; /* Full width of the viewport */
-  height: 35vh; /* Full height of the viewport */
-  background-color: #ffffff; /* Semi-transparent background for overlay effect */
-  z-index: 9999; /* High z-index to ensure it is above all other elements */
+  width: 30vw;
+  height: 35vh; 
+  background-color: #ffffff;
+  z-index: 9999; 
   display: flex;
   flex-direction: column;
   justify-content: center;

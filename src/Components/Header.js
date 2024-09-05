@@ -18,7 +18,7 @@ function Header() {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [totalRank, setTotalrank] = useState("");
-  const { state, setLogedin ,resetState} = useContext(GlobalStateContext);
+  const { state, setLogedin, resetState } = useContext(GlobalStateContext);
 
   const logout = () => {
     handleClose();
@@ -27,25 +27,21 @@ function Header() {
     navigate("/");
     resetState();
 
-    // setOpen(false);
   };
-
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-
   const handleClose = () => {
     setAnchorEl(null);
   };
-const navigateTo = ()=>{
-  navigate("/leaderBoard")
-}
+  const navigateTo = () => {
+    navigate("/leaderBoard");
+  };
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
 
   return (
     <div className="Header">
@@ -58,7 +54,6 @@ const navigateTo = ()=>{
       <div className="headerOptions">
         {state.isLogedin && (
           <button className="pos" onClick={navigateTo}>
-            {/* <img src={image} className="posImage" alt="" /> */}
             <p className="rank">
               Rank : #{state.rank} of {state.totaluser}
             </p>

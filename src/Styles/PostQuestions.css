@@ -25,24 +25,19 @@ textarea::placeholder {
 
 .top {
   display: flex;
-  /* gap: 3rem; */
   justify-content: space-between;
-  /* margin-bottom: 2rem; */
 }
 .postQuestions {
-  /* width:80vh; */
   height: 87vh;
-  /* overflow-y: auto; */
 
 }
 .postQuestions::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
 .postQuestions{
-  scrollbar-width: none; /* Hide scrollbar */
-  -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
 }
 .postmain {
   display: flex;
@@ -54,24 +49,22 @@ textarea::placeholder {
 #snapShot {
   border: none;
   font-size: 1rem;
-  /* padding-top: 0.5rem; */
 }
 #snapShot::placeholder {
   color: #606871;
   font-size: 1rem;
 }
 textarea {
-  max-height: 150px; /* Adjust as needed */
-  overflow-y: auto; /* Enable scrolling within the textarea */
+  max-height: 150px;
+  overflow-y: auto; 
 }
 textarea::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
 textarea {
   scrollbar-width: none;
-  -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer and Edge */
+  -ms-overflow-style: none; 
 }
 .ansOption {
   display: flex;

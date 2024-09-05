@@ -2,14 +2,12 @@
   color: white;
   width: 100vw;
   height: 87vh;
-  /* background-color: #fff;   */
   display: flex;
   justify-content: center;
 }
 .mainP {
   width: 90vw;
   height: 80vh;
-  /* background-color: antiquewhite; */
   border-radius: 10px;
   border: 2px solid #282d32;
   display: flex;
@@ -34,7 +32,6 @@
   display: none;
 }
 
-/*QSnippeet*/
 .Qsnippet {
   border: 2px solid #282d32;
   width: 27.5vw;

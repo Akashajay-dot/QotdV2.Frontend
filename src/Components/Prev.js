@@ -42,7 +42,6 @@ function Prev() {
       console.log(Qids);
       setQids(Qids.data.approvedQuestionIds);
       setAnsweredQIds(Qids.data.answeredQuestionIds);
-      // /${searchtxt}
     } catch (error) {
       console.log(error);
     }
@@ -80,10 +79,7 @@ function Prev() {
         </div>
       </div>
       <div className="bottom">
-        {/* {(
-      Options.map(option => (
-        <div key={option.AnswerOptionId}>)))} */}
-        {/* {(QIds !=  null) && console.log(QIds)} */}
+       
         {!(unansweredQIds.length === 0) &&
           unanswered &&
           unansweredQIds.map((i) => (
@@ -93,9 +89,7 @@ function Prev() {
           <div className="noQuestion">
             <h2>Quiz done! More brain jazz tomorrow! 🚀🎉</h2>
             <div className="popBtns">
-              {/* <Link to={"/postQuestions"}> <button  className='addQstnBtn'>Add   Questions</button></Link> */}
-              {/* <Link to="prevQuestions">  <button className='prvQstnBtn'>Prev Question</button> </Link> */}
-              {/* <button className='prvQstnBtn' >Prev Questions</button> */}
+              
             </div>
           </div>
         )}
@@ -107,9 +101,7 @@ function Prev() {
           <div className="noQuestion">
             <h2>Quiz done! More brain jazz tomorrow! 🚀🎉</h2>
             <div className="popBtns">
-              {/* <Link to={"/postQuestions"}> <button  className='addQstnBtn'>Add   Questions</button></Link> */}
-              {/* <Link to="prevQuestions">  <button className='prvQstnBtn'>Prev Question</button> </Link> */}
-              {/* <button className='prvQstnBtn' >Prev Questions</button> */}
+             
             </div>
           </div>
         )}

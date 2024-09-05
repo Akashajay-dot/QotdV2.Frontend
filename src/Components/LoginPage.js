@@ -8,7 +8,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-// import api from './api';
 
 function LoginPage() {
   const {
@@ -44,7 +43,6 @@ function LoginPage() {
               const decoded = jwtDecode(Response.credential);
               const credential = Response.credential;
 
-              // console.log(timeToShowModal);
 
               if (decoded.email.endsWith("@carestack.com")) {
                 try {
@@ -57,11 +55,8 @@ function LoginPage() {
                       credential: credential,
                     }
                   );
-                  // console.log(res);
                   if (res.data.isvalid) {
-                    //  setLoading(true);z
-
-                    // console.log(res.data.payload)
+                  
                     setId(res.data.userId);
 
                     setUserName(res.data.payload.name);
@@ -75,21 +70,17 @@ function LoginPage() {
                     setLogedin(true);
                     setCategory(res.data.category);
 
-                    //  console.log(res.data.isAdmin)
 
                     if (res.data.isAdmin) {
                       setAdmin(true);
-                      // console.log("i am admin")
                     }
                     navigate("/");
-                    // const decoded = jwtDecode(credential);
                     const expiresIn = decoded.exp;
 
                     const expiryDate = new Date(expiresIn * 1000);
                     const currentTime = Date.now();
                     const timeToShowModal = expiryDate.getTime() - 60 * 1000;
                     setExpiresAt(timeToShowModal);
-                    //  console.log("haii"+state.expiresAt);
                   } else {
                     notify();
                   }
@@ -106,13 +97,12 @@ function LoginPage() {
               notify();
             }}
           />
-          {/* <a href="">Forgot Password?</a>  */}
           <p className="loginbutm">
             By logging in, you agree to abide by the CareStack's usage policies.
           </p>
         </div>
       </div>
-      <div className="hero">{/* <img src={image} alt="" /> */}</div>
+      <div className="hero"></div>
       <ToastContainer />
     </div>
   );

@@ -7,9 +7,7 @@ import { GlobalStateProvider } from "./Context/GlobalStateContext";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-const GoogleId = process.env.REACT_APP_GOOGLE_CLIENT_ID
-
-
+const GoogleId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 root.render(
   <React.StrictMode>

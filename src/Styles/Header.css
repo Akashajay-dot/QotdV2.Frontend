@@ -80,9 +80,7 @@
 .proOpt {
   padding-block: 1rem;
   display: flex;
-  /* justify-content: center; */
-  /* padding-left: 1.5rem; */
-  /* width: 17vw; */
+  
 }
 .innerOpt {
   display: flex;
@@ -93,14 +91,11 @@
 .pos {
   background-color: #AA8219;
   color: white;
-  /* height: vh; */
-  /* width: 7vw; */
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  /* padding-right: 0.6rem; */
   padding-inline: 1rem;
   padding-block: 0.5rem;
  

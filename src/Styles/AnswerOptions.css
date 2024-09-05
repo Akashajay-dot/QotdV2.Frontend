@@ -15,12 +15,10 @@
   width: 10px;
 }
 .bin-button:disabled{
-  /* width: 20px; */
   background-color: rgb(80, 80, 80);
 }
 
 .bin-button:disabled:hover{
-  /* width: 20px; */
   background-color: rgb(80, 80, 80);
 }
 

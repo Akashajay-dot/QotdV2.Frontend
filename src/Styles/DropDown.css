@@ -2,12 +2,9 @@
   font-size: 16px;
   line-height: 1.6;
   color: #ffffff;
-  /* width: 20vw; */
   display: flex;
   list-style: none;
-  /* background-color: #6358587d; */
   border-radius: 16px;
-  /* border: 1px solid #ffffff; */
 }
 .drop {
   display: flex;
@@ -32,7 +29,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  /* padding: 12px px; */
   padding-block: 0.4rem;
   padding-inline: 0.8rem;
   font-size: 1rem;
@@ -65,7 +61,6 @@
 
 .menu .item {
   position: relative;
-  /* background-color: #0a3cff; */
 }
 
 .menu .item .submenu {
@@ -96,7 +91,6 @@
   border-top: transparent;
   border: 2px solid #17191c;
   background-color: #000000;
-  /* border-radius: 16px; */
 }
 
 .menu .item:hover .link {

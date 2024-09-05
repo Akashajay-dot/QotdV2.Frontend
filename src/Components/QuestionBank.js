@@ -48,7 +48,6 @@ function QuestionBank() {
         }
       );
       setQids(Qids.data);
-      // /${searchtxt}
     } catch (error) {
       console.log(error);
     }
@@ -57,21 +56,7 @@ function QuestionBank() {
     setPopover(true);
     setQidtoDelte(i);
 
-    // try {
-    //   const response = await axios.delete(`${apiBaseUrl}/api/delete/${i}`, {
-    //     headers: {
-    //         Authorization: `Bearer ${token}`,
-    //     },
-    // });
-    //   if (response.status === 204) {
-    //     console.log("Question deleted successfully");
-    //     // Optionally, update your UI here to reflect the deletion
-    //     setQids(QIds.filter(QIds => QIds !== i));
-    // }
-    // }
-    // catch (error){
-    //   console.log(error);
-    // }
+ 
   };
   const deleteQuestion2 = async () => {
     setPopover(false);
@@ -86,7 +71,6 @@ function QuestionBank() {
       );
       if (response.status === 204) {
         console.log("Question deleted successfully");
-        // Optionally, update your UI here to reflect the deletion
         setQids(QIds.filter((QIds) => QIds !== QidtoDelte));
       }
     } catch (error) {
@@ -156,7 +140,6 @@ function QuestionBank() {
   };
   const search = (e) => {
     if (searchtxt != "") {
-      // console.log("sss")
       setAll(false);
       setPublished(false);
       setunPublished(false);
@@ -171,7 +154,6 @@ function QuestionBank() {
   const dltsearch = () => {
     if (searchtxt != "") {
       setSearchtext2(null);
-      // Qid();
       setSearchtext("");
       setAll(true);
     }
@@ -206,10 +188,7 @@ function QuestionBank() {
 
         <div className="QBsearch">
           <div className="QBCat">
-            {/* <p>Category</p> */}
-            {/* <DropDown heading={cat}
-              options={['All','Fun', 'Tech','Maths']}
-              onChange={handleCategoryChange}/> */}
+           
             <DropDown2 heading={cat} onChange={handleCategoryChange} />
           </div>
           <div className="catinner">
@@ -221,7 +200,11 @@ function QuestionBank() {
               placeholder="Enter something..."
             />
             <button className="searchbtn" onClick={dltsearch}>
-              {searchtxt != "" ? <CloseIcon className="SearchIcon"/> : <SearchIcon className="SearchIcon"/>}
+              {searchtxt != "" ? (
+                <CloseIcon className="SearchIcon" />
+              ) : (
+                <SearchIcon className="SearchIcon" />
+              )}
             </button>
           </div>
         </div>
@@ -231,8 +214,8 @@ function QuestionBank() {
           <div className="DeletePopOver">
             <HighlightOffIcon
               sx={{
-                fontSize: 68, // Adjust the size
-                color: "#ff7d7de0", // Change the color
+                fontSize: 68, 
+                color: "#ff7d7de0", 
               }}
             />
             <h3>Are you sure?</h3>
@@ -258,10 +241,7 @@ function QuestionBank() {
             </div>
           </div>
         )}
-        {/* {(
-      Options.map(option => (
-        <div key={option.AnswerOptionId}>)))} */}
-        {/* {(QIds !=  null) && console.log(QIds)} */}
+       
         {QIds != null &&
           QIds.map((i) => (
             <QBblock

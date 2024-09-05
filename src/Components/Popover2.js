@@ -9,7 +9,6 @@ function Popover2({ popover }) {
   const navigate = useNavigate();
 
   const handleRefresh = () => {
-    // navigate(0); // Refresh the current route
     setToggle(!state.toggle);
   };
   const handleClick = () => {
@@ -25,7 +24,6 @@ function Popover2({ popover }) {
         <button className="addQstnBtn" onClick={handleRefresh}>
           Add Questions
         </button>
-        {/* <button className='prvQstnBtn'>Prev Question</button> */}
         <button className="prvQstnBtn" onClick={handleClick}>
           Prev Questions
         </button>

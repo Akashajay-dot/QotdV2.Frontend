@@ -29,8 +29,6 @@ function QBblock({ id, onchange, previous }) {
   const [toggle, setToggle] = useState(false);
   const [isToday, setIsToday] = useState();
   const minDate = dayjs();
-  // .add(1, 'day')
-  // const [dates, setDates] = useState([]);
   const today = dayjs();
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const token = localStorage.getItem("token");
@@ -50,7 +48,6 @@ function QBblock({ id, onchange, previous }) {
           Authorization: `Bearer ${token}`,
         },
       });
-      // console.log(response);
       setDates(response.data.map((date) => dayjs(date).format("YYYY-MM-DD")));
     } catch (error) {
       console.error("Error fetching question dates:", error);
@@ -67,9 +64,7 @@ function QBblock({ id, onchange, previous }) {
             },
           }
         );
-        // console.log(response);
         if (response.status === 200) {
-          //console.log(response.data.question);
           setQuestion(response.data.question.question);
           setIsactive(response.data.question.isActive);
           setIsApproved(response.data.question.isApproved);
@@ -80,17 +75,13 @@ function QBblock({ id, onchange, previous }) {
             const dateOnly = moment(dateTimeString).format("YYYY-MM-DD");
             setQuestionDate(dateOnly);
             const date = response.data.question.questionDate;
-            // console.log(dayjs(date));
 
             setIsToday(dayjs(date).isSame(today, "day"));
             if (dayjs(date).isBefore(today, "day")) {
               setIsToday(true);
             }
-            // setIsToday( (dayjs(date).isBefore(today, 'day')));
-
-            //  console.log( ""+(dayjs(date).isSame(minDate, 'day')));
+           
           }
-          // setValue(QuestionDate);
         } else {
           console.log("No question available for today.");
         }
@@ -101,30 +92,16 @@ function QBblock({ id, onchange, previous }) {
     };
 
     fetchQuestion();
-    // setIsToday( (dayjs(QuestionDate).isSame(today, 'day')));
   }, [id]);
   useEffect(() => {
     if (previous) {
       setIsToday(true);
     }
   }, [previous]);
-  // const deleteQuestion=async ()=>{
-  //   try {
-  //     const response = await axios.delete(`http://localhost:57101/api/delete/${id}`);
-  //     if (response.status === 204) {
-  //       console.log("Question deleted successfully");
-  //       // Optionally, update your UI here to reflect the deletion
-
-  //   }
-  //   }
-  //   catch (error){
-  //     console.log(error);
-  //   }
-  // }
+ 
   const changeDate = async () => {
     try {
-      // Send PUT request to the backend API
-      
+
       const formattedDate = dayjs(value).format("YYYY-MM-DD");
       const dateToSend = value ? formattedDate : null;
 
@@ -142,10 +119,8 @@ function QBblock({ id, onchange, previous }) {
         }
       );
 
-      // Log the updated question
       console.log("Updated Question:", response.data);
     } catch (error) {
-      // Handle error
       console.error("Error updating question date:", error);
     }
     fetchDates();
@@ -159,18 +134,11 @@ function QBblock({ id, onchange, previous }) {
   const dateChange = (newValue) => {
     const localDate = dayjs(newValue).local();
     setValue(localDate.format());
-    // setValue((newValue.toISOString()));
     setQuestionDate(localDate.format());
     setIsApproved(true);
-    // if(value==(newValue.toISOString())){
-    // changeDate();
-    // }
-    // console.log();
     setToggle(false);
   };
   const dltDate = () => {
-    // e.stopPropagation();
-    // console.log("haiii");
     setQuestionDate(null);
     setValue(null);
     setIsApproved(false);
@@ -202,84 +170,77 @@ function QBblock({ id, onchange, previous }) {
         </button>
 
         <div className="QBright">
-          {/* {(QuestionDate != null || value != null) && isActive && !isToday && (
-            <button className="cancelBtn" onClick={dltDate}>
-              {" "}
-              <CancelIcon className="cancelicon" />
-            </button>
-          )} */}
+         
 
-            <button className="cancelBtn" onClick={dltDate}  disabled={!(QuestionDate != null || value != null) || isToday}>
-              {" "}
-              <CancelIcon className="cancelicon"  />
-            </button>
+          <button
+            className="cancelBtn"
+            onClick={dltDate}
+            disabled={!(QuestionDate != null || value != null) || isToday}
+          >
+            {" "}
+            <CancelIcon className="cancelicon" />
+          </button>
 
-          {/* {  isActive &&( */}
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker
                 value={QuestionDate != null ? dayjs(QuestionDate) : value}
                 onChange={(newValue) => {
-                  const dateOnly = newValue.startOf('day');
+                  const dateOnly = newValue.startOf("day");
                   dateChange(dateOnly);
                 }}
                 minDate={minDate}
                 readOnly={isToday}
                 sx={{
                   "& .MuiStack-root": {
-                    paddingTop: "0px", // Remove top padding
+                    paddingTop: "0px", 
                   },
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "transparent", // Disable the border color
+                      borderColor: "transparent", 
                     },
                     "&:hover fieldset": {
-                      borderColor: "transparent", // Disable border color on hover
+                      borderColor: "transparent", 
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "transparent", // Disable border color when focused
+                      borderColor: "transparent", 
                     },
                     "&.Mui-error fieldset": {
-                      borderColor: "transparent", // Remove the red border on error
+                      borderColor: "transparent", 
                     },
                     width: "75%",
                   },
                   "& .MuiInputBase-input": {
-                    color: "white", // Change text color to white
-                    // Adjust right padding
+                    color: "white", 
                   },
                   "& .MuiIconButton-root": {
-                    marginRight: "0", // Remove margin around the icon button
+                    marginRight: "0",
                   },
                   "& .MuiInputAdornment-root .MuiSvgIcon-root": {
-                    color: "white", // Change the calendar icon color
+                    color: "white", 
                   },
                   "& .MuiPickersDay-day": {
-                    color: "white", // Change color of the days
+                    color: "white", 
                   },
                   "& .MuiInputBase-root": {
-                    backgroundColor: "transparent", // Ensure background is transparent if needed
+                    backgroundColor: "transparent",
                   },
                   "& .css-sx5hge": {
-                    paddingTop: "0px", // Remove top padding
+                    paddingTop: "0px", 
                   },
                   "& .css-10o2lyd-MuiStack-root": {
-                    paddingTop: "0px", // Remove the padding-top
+                    paddingTop: "0px", 
                   },
                 }}
                 shouldDisableDate={(date) =>
                   state.dates.includes(dayjs(date).format("YYYY-MM-DD"))
                 }
                 InputProps={{
-                  readOnly: true, // Prevent typing in the DatePicker
+                  readOnly: true, 
                 }}
               />
-              {/* defaultValue={dayjs(QuestionDate)} */}
-              {/* (newValue) => setValue(newValue) */}
             </DemoContainer>
           </LocalizationProvider>
-          {/* )} */}
-          {/* {!isActive && <p className='dateInactive'>{QuestionDate}</p>} */}
 
           <button
             type="button"

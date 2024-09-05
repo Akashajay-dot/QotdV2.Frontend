@@ -3,8 +3,6 @@ import "../Styles/DropDown.css";
 import { GlobalStateContext } from "../Context/GlobalStateContext";
 
 function DropDown2({ heading, onChange }) {
-
-
   const { state } = useContext(GlobalStateContext);
   const [categories, setCategories] = useState({
     categoryId: -1,
@@ -12,18 +10,15 @@ function DropDown2({ heading, onChange }) {
   });
   const [updatedCategory, setupdatedCategory] = useState([]);
 
-
   useEffect(() => {
     const updated = [...state.categories, categories];
     setupdatedCategory(updated);
   }, []);
 
-
   const handleOptionClick = (category) => {
     onChange(category);
   };
 
-  
   return (
     <div className="menu">
       <div className="item">

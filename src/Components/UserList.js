@@ -16,18 +16,15 @@ const UserList = forwardRef(({ id, index }, ref) => {
   useEffect(() => {
     try {
       const fetchUserdetails = async () => {
-        // http://localhost:57101/api/user/5
         const response = await axios.get(`${apiBaseUrl}/api/user/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        // return(response);
         setname(response.data.user.name);
         setPoints(response.data.user.points);
         setBadge(response.data.reputationName);
 
-        // console.log(response)
       };
       fetchUserdetails();
       if (id == state.id) {
@@ -47,11 +44,10 @@ const UserList = forwardRef(({ id, index }, ref) => {
       <div className="userListleft ">
         <p className="userRank">{index + 1}</p>
         <p>{name}</p>
-        
       </div>
       <div className="rankTittle">
-          <p className="userBadge">{badge}</p>
-        </div>
+        <p className="userBadge">{badge}</p>
+      </div>
       <h5>{points}</h5>
     </div>
   );
