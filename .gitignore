@@ -211,7 +211,3 @@ project.lock.json
 
 # Onboarding migration - MYSQL Migration assistant reports
 **/Create_Local_SQL_Server_DB/report/*
-
-/Deriviz.Apps/DerivizDataServices/DerivizDataServices/GMSSDS.db
-/Deriviz.Apps/DerivizDataServices/DervizDataServices.SQLite/DervizDataServices - Backup.SQLite.csproj
-/Deriviz.Apps/DerivizDataServices/DerivizDataServices/GMSSDS_*.zip
